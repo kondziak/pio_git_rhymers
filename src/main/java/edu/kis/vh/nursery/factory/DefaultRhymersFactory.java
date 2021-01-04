@@ -18,7 +18,7 @@ public class DefaultRhymersFactory implements Rhymersfactory {
     }
 
     @Override
-    public DefaultCountingOutRhymer GetFIFORhymer() {
+    public DefaultCountingOutRhymer GetFifoRhymer() {
         return new FifoRhymer();
     }
 
