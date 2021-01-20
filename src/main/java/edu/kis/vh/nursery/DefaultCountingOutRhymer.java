@@ -28,7 +28,7 @@ public class DefaultCountingOutRhymer {
     }
 
     private int total = getTOTALSTATUS();
-    private int[] numbers = new int[getSIZE()];
+    private final int[] numbers = new int[getSIZE()];
 
     public void countIn(int in) {
         if (!isFull())
