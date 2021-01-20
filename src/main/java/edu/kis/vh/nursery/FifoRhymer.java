@@ -8,14 +8,19 @@ public class FifoRhymer extends DefaultCountingOutRhymer {
     public int countOut() {
         while (!callCheck())
 
-            temp.countIn(super.countOut());
+            getTemp().countIn(super.countOut());
 
-        int ret = temp.countOut();
+        int ret = getTemp().countOut();
 
-        while (!temp.callCheck())
+        while (!getTemp().callCheck())
 
-            countIn(temp.countOut());
+            countIn(getTemp().countOut());
 
         return ret;
     }
+
+    public DefaultCountingOutRhymer getTemp() {
+        return temp;
+    }
+
 }
