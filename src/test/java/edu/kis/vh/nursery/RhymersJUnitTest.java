@@ -75,4 +75,17 @@ public class RhymersJUnitTest {
         Assert.assertEquals(EMPTY_STACK_VALUE, result);
     }
 
+    @Test
+    public void reportRejected() {
+        HanoiRhymer rhymer = new HanoiRhymer();
+
+        final int[] input = {15, 13, 14, 13, 20, 12, 6, 7, 8, 0,9,18};
+        final int[] expectedOutput = {0, 0, 1, 1, 2, 2, 2, 3, 4, 4,5,6};
+
+        for(int i = 0; i < input.length; i++) {
+            rhymer.countIn(input[i]);
+            Assert.assertEquals(rhymer.reportRejected(), expectedOutput[i]);
+        }
+    }
+
 }
