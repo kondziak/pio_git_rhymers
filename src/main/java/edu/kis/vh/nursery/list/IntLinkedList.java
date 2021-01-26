@@ -9,7 +9,10 @@ public class IntLinkedList {
     public static int getEMPTY() {
         return EMPTY;
     }
-
+    /**
+     * Dodaje element na koniec listy
+     * @param i wartość elementu, który zostanie dodany na koniec listy
+     */
     public void push(int i) {
         if (getLast() == null)
             setLast(new Node(i));
@@ -19,21 +22,33 @@ public class IntLinkedList {
             setLast(getLast().getNext());
         }
     }
-
+    /**
+     * Sprawdza czy lista jest pusta
+     * @return true jeżeli lista jest pusta, w przeciwnym wypadku false
+     */
     public boolean isEmpty() {
         return getLast() == null;
     }
-
+    /**
+     * Sprawdza, czy lista jest pełna
+     * @return true jeżeli lista jest pełna, w przeciwnym wypadku false
+     */
     public boolean isFull() {
         return false;
     }
-
+    /**
+     * Zwraca wartość elementu znajdującego się na końcu listy
+     * @return wartość ostatniego elementu na liście
+     */
     public int top() {
         if (isEmpty())
             return getEMPTY();
         return getLast().getValue();
     }
-
+    /**
+     * Usuwa ostatni element z listy
+     * @return wartość usuwanego elementu listy
+     */
     public int pop() {
         if (isEmpty())
             return getEMPTY();
